@@ -87,7 +87,7 @@ int main()
 			*(plane_t+12)=buf[h++];
 			*(plane_t+13)=buf[h++];
 			
-			*(plane_k+i*20+14)=buf[h++];
+			*(plane_t+14)=buf[h++];
 		}
 		if(keyb_isAnyKeyPressed()==1)
 		{
