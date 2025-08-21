@@ -10,6 +10,7 @@ player.c should be complied by hpgcc2
 ## How to use:
 
 1.Install: 
+
 	After compile the program with hpgcc2, you'll get the player.hp. Copy the player.hp file to the root of HP50g's SD card.
  
 2.Use bin_image.py: 
