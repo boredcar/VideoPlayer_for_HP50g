@@ -90,13 +90,15 @@ def newvideo():
 	else:
 		print('failed')
 	file.close()
-def new16video():
+def new16video(videoname,outname):
+	N=4
+
 	newmatrix=np.zeros((80,13))
 	n=0
 	#print(newmatrix)
 	#ffmpeg -i 3.mov -vcodec h264 -acodec mp2 3.mp4
-	videoname="./3.mp4"
-	file=open("5.bin","wb")
+	#videoname="./3.mp4"
+	file=open(outname,"wb")
 	#file.write(struct.pack('=B',255)*0)
 	capture=cv2.VideoCapture(videoname)
 	ret,img=capture.read()
@@ -117,10 +119,12 @@ def new16video():
 				for x in range(52):
 					file.write(struct.pack('=B',unbyteread16(matrix[y][x*2:x*2+2])))
 			file.write(struct.pack('=B',255)*13*16*4)
-			n=4
+			n=N
 	else:
 		print('failed')
 	file.close()
 
-new16video()
+getvideo=input("the video file(example: ./3.mp4 ): ")
+setout=input("the output bin file(example: ./5.bin ): ")
+new16video(getvideo,setout)
 
